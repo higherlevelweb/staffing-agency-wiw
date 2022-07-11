@@ -115,19 +115,19 @@ function testimonials_form() {
  
     wp_nonce_field( 'testimonials', 'testimonials' );
     ?>
-    <p>
-        <label>Client's Name (optional)</label><br />
-        <input type="text" value="<?php echo $client_name; ?>" name="testimonial[client_name]" size="40" />
-    </p>
-    <p>
-        <label>Business/Site Name (optional)</label><br />
-        <input type="text" value="<?php echo $source; ?>" name="testimonial[source]" size="40" />
-    </p>
-    <p>
-        <label>Link (optional)</label><br />
-        <input type="text" value="<?php echo $link; ?>" name="testimonial[link]" size="40" />
-    </p>
-    <?php
+<p>
+    <label>Client's Name (optional)</label><br />
+    <input type="text" value="<?php echo $client_name; ?>" name="testimonial[client_name]" size="40" />
+</p>
+<p>
+    <label>Business/Site Name (optional)</label><br />
+    <input type="text" value="<?php echo $source; ?>" name="testimonial[source]" size="40" />
+</p>
+<p>
+    <label>Link (optional)</label><br />
+    <input type="text" value="<?php echo $link; ?>" name="testimonial[link]" size="40" />
+</p>
+<?php
 }
 
 add_action( 'save_post', 'testimonials_save_post' );
@@ -218,3 +218,24 @@ function wp_maintenance_mode() {
     }
     add_action('get_header', 'wp_maintenance_mode');
  */ 
+
+ /*
+ * Contact 7 Form Validation Filter to ensure End Date comes after Start Data and that shift is minimum 3 hours if on same day
+*/
+add_filter( 'wpcf7_validate_date*', 'custom_date_confirmation_validation_filter', 20, 2 );
+  
+function custom_date_confirmation_validation_filter( $result, $tag ) {
+    $start = strtotime($_POST['ShiftStartDate'] . " " . $_POST['shift-start-time']);
+    $end = strtotime($_POST['ShiftEndDate'] . " " . $_POST['shift-end-time']);
+    $minutes = (strtotime($_POST['shift-end-time']) - strtotime($_POST['shift-start-time'])) / 60;
+    if ( $start > $end ) {
+        $msg = "The shift end date must come after the shift start date.";
+        $result->invalidate( $tag, $msg);
+    } else if (strtotime($_POST['ShiftStartDate']) == strtotime($_POST['ShiftEndDate'])){
+        if($minutes <= 179){
+            $msg = "Shift must be at least 3 hours.";
+            $result->invalidate( $tag, $msg);
+        }
+    }
+    return $result;
+}

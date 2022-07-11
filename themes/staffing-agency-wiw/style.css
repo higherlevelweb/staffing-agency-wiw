@@ -1463,6 +1463,7 @@ input.wpcf7-submit:hover {
   }
 }
 
+/* Small devices (landscape phones, 991px and below)*/
 @media (min-width: 1200px) {
   .container {
     max-width: 1240px;
@@ -1508,6 +1509,9 @@ input.wpcf7-submit:hover {
 
   #site-navigation li:last-child {
     margin-left: 10px;
+  }
+  .form-item-sub{
+    margin-top:20px;
   }
 }
 

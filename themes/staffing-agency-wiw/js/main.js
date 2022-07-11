@@ -1,5 +1,4 @@
 // ** main.js - JavaScript Page Functions ** //
-
 // Window listener for resize event to reset responsive menu and arrtibute tags 
 document.addEventListener("DOMContentLoaded", function (event) {
     // This method should be debounced for permormance, so that it doesn't have to execute on every resize event, but only once the user is done resizing.
@@ -35,3 +34,4 @@ document.addEventListener('wpcf7mailsent', function (event) {
         el.style.display = 'none';
     });
 }, false);
+

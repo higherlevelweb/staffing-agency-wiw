@@ -24,7 +24,7 @@
             <nav id="site-navigation" class="main-navigation">
                 <button class="menu-toggle" aria-controls="primary-menu"
                     aria-expanded="false"><i class="icofont-navigation-menu"></i></button>
-                <div id='nav-menu-logo'><a href="/"><img src="http://educarestaffing.com/wp-content/themes/satiffing-agency-wiw/images/ecs-logo.png" /></a></div>
+                <div id='nav-menu-logo'><a href="/"><img src="http://educarestaffing.com/wp-content/themes/staffing-agency-wiw/images/ecs-logo.png" /></a></div>
                 <?php
 			wp_nav_menu(
 				array(
