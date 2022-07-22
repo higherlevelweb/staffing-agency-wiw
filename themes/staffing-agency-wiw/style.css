@@ -292,7 +292,7 @@ footer {
 }
 
 button.btn-highlight,
-.btn-highlight a {
+.btn-highlight a, button.btn-highlight:visited,.btn-highlight a:visited {
   margin-top: 5px;
   display: inline-block;
   margin-bottom: 0;
@@ -866,7 +866,7 @@ optgroup,
 textarea {
   color: #404040;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.5;
 }
 
@@ -1000,16 +1000,6 @@ table {
 	--------------------------------------------- */
 a {
   color: #415965;
-}
-
-a:visited {
-  color: #415965;
-}
-
-a:hover,
-a:focus,
-a:active {
-  color: #648292;
 }
 
 a:focus {
@@ -1354,7 +1344,7 @@ textarea {
   margin-bottom: 0;
 }
 
-.wpb_button_a {
+.wpb_button_a, .wpb_button_a:visited {
   display: block;
   background-color: #ff9900;
   padding: 8px;
@@ -1521,6 +1511,23 @@ input.wpcf7-submit:hover {
     width: 55%;
   }
 
+  .meta-page-left {
+    float: none;
+    margin: 10px auto;
+    padding: 0px;
+  }
+
+  .meta-page-right {
+    float: none;
+    margin: 10px auto;
+    padding: 0px;
+  }
+
+  #meta-page {
+    height: auto;
+    padding: 0.5rem;
+  }
+
   .menu-toggle {
     display: block;
   }
@@ -1620,23 +1627,6 @@ input.wpcf7-submit:hover {
   .wp-block-media-text__media img {
     margin-top: 0;
     margin-bottom: 3rem;
-  }
-
-  .meta-page-left {
-    float: none;
-    margin: 10px auto;
-    padding: 0px;
-  }
-
-  .meta-page-right {
-    float: none;
-    margin: 10px auto;
-    padding: 0px;
-  }
-
-  #meta-page {
-    height: auto;
-    padding: 0.5rem;
   }
 
   main {

@@ -32,7 +32,8 @@ add_theme_support( 'menus' );
 // This theme uses wp_nav_menu() in one location.
 register_nav_menus(
 	array(
-		'menu-1' => esc_html__( 'Primary', 'staffing-agency-wptheme-wiw' )
+		'menu-1' => esc_html__( 'Primary', 'staffing-agency-wptheme-wiw' ),
+        'client-menu' => esc_html__( 'Client', 'staffing-agency-wptheme-wiw' )
 	)
 );
 
