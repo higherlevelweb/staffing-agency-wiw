@@ -1,0 +1,134 @@
+/*--------------------------------------------------------------
+	# Home Page Image Slider Code
+	--------------------------------------------------------------*/
+
+/*
+Removes white gap between slides - chagnge to base color of slide images
+*/
+#main-carousel .carousel-item {
+  height: 35vh;
+  min-height: 150px;
+  background: no-repeat top center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#main-carousel {
+    overflow: hidden;
+}
+
+#main-carousel .carousel-next, #main-carousel .carousel-prev {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 21px;
+    display: inline-block;
+    margin-top: -35px;
+    height: 70px;
+    width: 70px;
+    line-height: 70px;
+    text-align: center;
+    border-radius: 100px;
+    z-index: 5;
+    -webkit-transition: background-color 400ms;
+    transition: background-color 400ms;
+}
+#main-carousel .carousel-prev {
+    left: -37px;
+    text-indent: 28px;
+}
+#main-carousel .carousel-next {
+    right: -37px;
+    text-indent: -28px;
+}
+#main-carousel .carousel-prev:hover, #main-carousel .carousel-next:hover {
+    background-color: #45aed6;
+}
+#main-carousel a.carousel-prev:hover, #main-carousel a.carousel-next:hover {
+    color: #fff;
+}
+
+#quote-carousel  {
+    background:#d0f3c0;
+        margin-bottom: 3em;
+        margin-top: 3em;
+}
+
+#quote-carousel .icofont-quote-left {
+    opacity: 0.7;
+    width: 50px;
+    font-size: 2.3em;
+    margin-right: 0.8em;
+}
+
+#quote-carousel .carousel-indicators{
+    display:none;
+}
+
+#quote-carousel .credit {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#quote-carousel .carousel-inner {
+    text-align: center;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 3.2em;
+}
+
+#quote-carousel .carousel-inner p {
+    margin-bottom: 1em;
+}
+
+#quote-carousel .carousel-item {
+    height: auto;
+    min-height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#quote-carousel .carousel-inner > .item {
+    position: relative;
+    display: none;
+    -webkit-transition: 0.9s ease-in-out left;
+    -moz-transition: 0.9s ease-in-out left;
+    -o-transition: 0.9s ease-in-out left;
+    transition: 0.9s ease-in-out left;
+}
+
+/* Extra large devices (large desktops, 575px and up)*/
+@media (min-width: 576px) {
+    #main-carousel .carousel-item {
+        height: 35vh;
+        min-height: 200px;
+    }
+}
+
+/* Small devices (landscape phones, 767px and up)*/
+@media (min-width: 768px) { 
+    #main-carousel .carousel-item {
+        height: 45vh;
+        min-height: 250px;
+    }
+}
+
+/* Small devices (landscape phones, 991px and up)*/
+@media (min-width: 992px) { 
+    #main-carousel .carousel-item {
+        height: 55vh;
+        min-height: 300px;
+    }
+}
+/* Small devices (landscape phones, 1999px and up)*/
+@media (min-width: 1199px) { 
+    #main-carousel .carousel-item {
+        height: 60vh;
+    }
+}
