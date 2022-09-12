@@ -223,6 +223,10 @@ main {
   margin-left: 20px;
 }
 
+.meta-page-left .header-bold{
+  font-weight:700;
+}
+
 #meta-footer {
   padding: 3rem 1rem 3rem;
   margin-top: 3rem;
@@ -256,7 +260,7 @@ footer {
 
 #nav-menu-logo img {
   height: auto;
-  max-width: 100%;
+  max-width: 90%;
 }
 
 .site-footer {
@@ -424,6 +428,11 @@ button.btn-highlight-light:hover,
   color: #fff;
 }
 
+.meta-page-left h2 {
+  font-size: 1.6rem;
+  color: #404040;
+}
+
 #navrow li.nav-item.active {
   border-bottom: 3px #0090c0 solid;
 }
@@ -509,7 +518,7 @@ h5.form-title {
 #primary-menu a {
   color: #838b92;
   display: block;
-  padding: 7px 14px;
+  padding: 7px 11px;
   margin: 1rem 0 1rem 1rem;
   font-size: 17px;
   text-decoration: none;
@@ -525,7 +534,8 @@ h5.form-title {
 }
 
 #primary-menu a:hover,
-#primary-menu .current_page_item a {
+#primary-menu .current_page_item a,
+#primary-menu li.current-menu-item a {
   border-bottom: 3px #0090c0 solid;
 }
 
@@ -543,13 +553,13 @@ h5.form-title {
   color: #fff;
   border-bottom: 3px #2a95be solid;
   background: #45aed6;
-  padding: 4px 17px;
+  padding: 4px 15px;
 }
 
 #site-navigation li:last-child a:hover {
   color: #fff;
   background: #00a9ac;
-  padding: 4px 17px;
+  padding: 4px 15px;
 }
 
 .site-footer-right a {
@@ -559,6 +569,18 @@ h5.form-title {
 .site-footer-right a:hover {
   color: #72aee6;
 }
+
+.admin-alink {
+  color: #0090c0;
+  border-bottom: 1px #0090c0 solid;
+  padding: 3px 5px 1px;
+}
+
+.admin-alink:hover{
+  color: #00aaad;
+  border-bottom: 1px #00aaad solid;
+}
+
 
 /**
  * 5. toggle menu ul 
@@ -1252,7 +1274,8 @@ textarea {
 }
 
 .toggled #primary-menu li a:hover,
-.toggled #primary-menu li.current_page_item a:hover {
+.toggled #primary-menu li.current_page_item a:hover,
+.toggled #primary-menu li.current-menu-item a:hover {
   border-bottom: 3px #0090c0 solid;
 }
 
@@ -1486,7 +1509,7 @@ input.wpcf7-submit:hover {
   }
 
   #nav-menu-logo {
-    width: 30%;
+    width: 29%;
   }
 
   #primary-menu {
@@ -1495,11 +1518,11 @@ input.wpcf7-submit:hover {
 
   #primary-menu a {
     margin: 0;
-    padding: 7px 13px;
+    padding: 7px 12px;
   }
 
   #site-navigation li:last-child {
-    margin-left: 10px;
+    margin-left: 9px;
   }
   .form-item-sub{
     margin-top:20px;
@@ -1507,10 +1530,21 @@ input.wpcf7-submit:hover {
 }
 
 /* Small devices (landscape phones, 767px and below)*/
-@media (max-width: 768px) {
+@media (max-width: 840px) {
+  #primary-menu {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
   #nav-menu-logo {
     width: 55%;
   }
+}
+
+/* Small devices (landscape phones, 767px and below)*/
+@media (max-width: 768px) {
+
 
   .meta-page-left {
     float: none;
@@ -1710,6 +1744,22 @@ input.wpcf7-submit:hover {
 
 .single-tribe_events .tribe-events-event-meta {
 	background: #e9ecef;
+}
+
+.tribe-events-page-title {
+  font-size: 28px;
+}
+
+#tribe-events-content .tribe-events-tooltip h4 {
+  font-size: 16px;
+}
+
+#tribe-events .tribe-events-button, #tribe-events .tribe-events-button:hover, #tribe_events_filters_wrapper input[type=submit], .tribe-events-button, .tribe-events-button.tribe-active:hover, .tribe-events-button.tribe-inactive, .tribe-events-button:hover, .tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-], .tribe-events-calendar td.tribe-events-present div[id*=tribe-events-daynum-]>a {
+  background-color: #00a5a8;
+}
+
+#tribe-events-content .tribe-events-tooltip h4, #tribe_events_filters_wrapper .tribe_events_slider_val, .single-tribe_events .tribe-events-cal-links a {
+    color: #0090c0;
 }
 
 /* Ultimate Member Plugin Custom Styles */

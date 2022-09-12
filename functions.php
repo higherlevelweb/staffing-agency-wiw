@@ -317,6 +317,21 @@ function change_notice( $html ) {
 }
 
 /*
+// add custom javscript if it is an events calendar page
+function the_events_calendar_javascript() {
+    if ( tribe_is_event_query() ) {
+    ?>
+        <script>
+          // your javscript code goes here
+          alert("Do action!");
+        </script>
+    <?php
+     }
+}
+add_action('wp_footer', 'the_events_calendar_javascript');
+*/
+
+/*
  * Use this function to throw website into maintainence mode
  * COMMENT THIS SECTION OUT TO TAKE THE SITE BACK OUT OF MAINTAINTENCE MODE
  * This code only gives access to the site for those logged in, and with proper access rights.

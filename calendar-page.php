@@ -16,13 +16,12 @@ $user = wp_get_current_user();
     <div class="container">
         <div class="meta-page-left">
             <h2>
-                My Calendar
+                <span class="header-bold">My Calendar</span> - <?php echo $user->display_name ?>
             </h2>
         </div>
-		<div class="meta-page-right"><?php echo $user->display_name ?></div>
+		<div class="meta-page-right admin-alink"><a href="/my-profile/"><i class="um-faicon-user"></i><?php echo " My  Profile"; ?></a></div>
     </div>
-</div>
-		
+</div>		
 <main id="primary" class="site-main">
 
     <?php
