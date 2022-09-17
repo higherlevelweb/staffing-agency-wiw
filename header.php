@@ -26,12 +26,25 @@
                     aria-expanded="false"><i class="icofont-navigation-menu"></i></button>
                 <div id='nav-menu-logo'><a href="/"><img src="http://educarestaffing.com/wp-content/themes/staffing-agency-wiw/images/ecs-logo.png" /></a></div>
                 <?php
-                wp_nav_menu(
-                    array(
-                        'theme_location' => 'menu-1',
-                        'container_id'         => 'primary-menu',
-                    )
-                );
+                if ( current_user_can( 'manage_options' ) ) {
+
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'admin-menu',
+                            'container_id'         => 'primary-menu',
+                        )
+                    );
+
+                } else {
+
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'menu-1',
+                            'container_id'         => 'primary-menu',
+                        )
+                    );
+
+                }
 			?>
             </nav><!-- #site-navigation -->
         </header><!-- #masthead -->

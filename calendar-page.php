@@ -19,7 +19,17 @@ $user = wp_get_current_user();
                 <span class="header-bold">My Calendar</span> - <?php echo $user->display_name ?>
             </h2>
         </div>
+        <?php
+        if(current_user_can( 'manage_options' )){
+        ?>
+		<div class="meta-page-right"><a href="/wp-admin/" class="admin-alink"><i class="fa fa-wordpress" aria-hidden="true"></i><?php echo " WordPress Dashbaord"; ?></a> | <a href="/my-profile/" class="admin-alink"><i class="um-faicon-user"></i><?php echo " My  Profile"; ?></a> | <a href="/my-calendar/" class="admin-alink"><i class="fa fa-calendar-check-o" aria-hidden="true"></i><?php echo " Calendar"; ?></a></div>
+        <?
+        } else {
+        ?>
 		<div class="meta-page-right admin-alink"><a href="/my-profile/"><i class="um-faicon-user"></i><?php echo " My  Profile"; ?></a></div>
+        <?
+        }
+        ?>
     </div>
 </div>		
 <main id="primary" class="site-main">

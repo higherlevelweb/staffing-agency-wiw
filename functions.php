@@ -32,7 +32,7 @@ add_theme_support( 'menus' );
 register_nav_menus(
 	array(
 		'menu-1' => esc_html__( 'Primary', 'staffing-agency-wptheme-wiw' ),
-        'client-menu' => esc_html__( 'Client', 'staffing-agency-wptheme-wiw' )
+        'admin-menu' => esc_html__( 'Administrator', 'staffing-agency-wptheme-wiw' )
 	)
 );
 

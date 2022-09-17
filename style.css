@@ -1285,6 +1285,11 @@ textarea {
   margin: 20px auto;
 }
 
+/*js-plethoraplugins-tabs */
+.plethoraplugins-tabs-container--horizontal.plethoraplugins-theme__minimal.plethoraplugins-theme__basic .plethoraplugins-tabs a{
+  font-size: 15px;
+}
+
 /*Bootstrap overide */
 
 .wp-block-media-text .wp-block-media-text__content {
