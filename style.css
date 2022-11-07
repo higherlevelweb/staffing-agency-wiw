@@ -1470,6 +1470,14 @@ input.wpcf7-submit:hover {
   top: -10px;
 }
 
+.row-second-section{
+  margin-top: 30px;
+}
+
+.row-second-section #age-group-field {
+  width: 200px;
+}
+
 /*--------------------------------------------------------------
 	# Responsive
 	--------------------------------------------------------------*/
@@ -1737,6 +1745,14 @@ input.wpcf7-submit:hover {
 .events-list #tribe-events-footer {
     border-top: none;
     padding-top: 1em;
+}
+
+.tribe-events-calendar .tribe-events-open-alert h3 a {
+  color: #bd5959 !important;
+}
+
+.tribe-events-open-alert {
+  color: #bd5959 !important;
 }
 
 .tribe-events-grid .column.first, .tribe-week-grid-hours {

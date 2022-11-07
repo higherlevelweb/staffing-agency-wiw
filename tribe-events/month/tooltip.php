@@ -19,10 +19,16 @@ if ( tec_events_views_v1_should_display_deprecated_notice() ) {
 		<h4 class="entry-title summary">[[=dateDisplay]]<\/h4>
 
 		<div class="tribe-events-event-body">
+			[[ if(shift_status=='closed') { ]]
 			<div class="tribe-event-duration">
 				<abbr class="tribe-events-abbr tribe-event-date-start">[[=shift_room]] <\/abbr>
 			<\/div>
-			<div class="tribe-event-description">[[=employee_name]]<br />[[=shift_position]]<\/div>
+			[[ } ]]
+			[[ if(shift_status=='closed') { ]]
+				<div class="tribe-event-description">[[=employee_name]]<br />[[=shift_position]]<\/div>
+			[[ } else { ]]
+				<div class="tribe-event-description">Open Shift<\/div>
+			[[ } ]]
 			<span class="tribe-events-arrow"><\/span>
 		<\/div>
 	<\/div>

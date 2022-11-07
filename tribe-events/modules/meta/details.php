@@ -65,12 +65,14 @@ $shift_meta_shift_id = get_post_meta( $post->ID, 'Shift ID' );
 $shift_meta_employee_name = get_post_meta( $post->ID, 'Employee Name' );
 $shift_meta_position = get_post_meta( $post->ID, 'Shift Position' );
 $shift_meta_shift_room = get_post_meta( $post->ID, 'Shift Room' );
+$shift_meta_shift_status = get_post_meta( $post->ID, 'Shift Status' );
 
 $additional_data = array();
 $additional_data['shift_id'] = $shift_meta_shift_id[0];
 $additional_data['employee_name'] = $shift_meta_employee_name[0];
 $additional_data['shift_position'] = $shift_meta_position[0];
 $additional_data['shift_room'] = $shift_meta_shift_room[0];
+$additional_data['shift_status'] = $shift_meta_shift_status[0];
 
 ?>
 
@@ -148,6 +150,7 @@ $additional_data['shift_room'] = $shift_meta_shift_room[0];
 
 		<?php endif ?>
 
+		<? if ($additional_data['shift_status']=="closed") { ?>
 			<!-- Event content -->
 			<dt class="tribe-events-start-time-label">Room: </dt>
 			<dd><div> <?php echo $additional_data['shift_room']; ?> <div></dd>
@@ -157,6 +160,16 @@ $additional_data['shift_room'] = $shift_meta_shift_room[0];
 			<dd><div> <?php echo $additional_data['shift_position']; ?> <div></dd>
 			<dt class="tribe-events-start-time-label">Shift ID: </dt>
 			<dd><div> <?php echo  $additional_data['shift_id']; ?> <div></dd>	
+		<? } else { ?>
+			<dt class="tribe-events-start-time-label">Room: </dt>
+			<dd><div>Not yet determined (open shift).<div></dd>
+			<dt class="tribe-events-start-time-label">Employee Name: </dt>
+			<dd><div>Not yet determined (open shift).<div></dd>
+			<dt class="tribe-events-start-time-label">Position: </dt>
+			<dd><div>Not yet determined (open shift). <div></dd>
+			<dt class="tribe-events-start-time-label">Shift ID: </dt>
+			<dd><div> <?php echo  $additional_data['shift_id']; ?> <div></dd>	
+		<? } ?>
 
 		<?php do_action( 'tribe_events_single_meta_details_section_end' ); ?>
 	</dl>

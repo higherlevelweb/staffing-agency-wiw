@@ -35,12 +35,14 @@ $shift_meta_shift_id = get_post_meta( $post->ID, 'Shift ID' );
 $shift_meta_employee_name = get_post_meta( $post->ID, 'Employee Name' );
 $shift_meta_position = get_post_meta( $post->ID, 'Shift Position' );
 $shift_meta_shift_room = get_post_meta( $post->ID, 'Shift Room' );
+$shift_meta_shift_status = get_post_meta( $post->ID, 'Shift Status' );
 
 $additional_data = array();
 $additional_data['shift_id'] = $shift_meta_shift_id[0];
 $additional_data['employee_name'] = $shift_meta_employee_name[0];
 $additional_data['shift_position'] = $shift_meta_position[0];
 $additional_data['shift_room'] = $shift_meta_shift_room[0];
+$additional_data['shift_status'] = $shift_meta_shift_status[0];
 
 ?>
 
@@ -55,6 +57,7 @@ $additional_data['shift_room'] = $shift_meta_shift_room[0];
 	</div>
 </div><!-- .tribe-events-event-meta -->
 
+<? if ($additional_data['shift_status']=="closed") { ?>
 <div class="tribe-events-list-event-description tribe-events-content description entry-summary">
 	<div class="entry-summary">
 			<div> Room: <?php echo $additional_data['shift_room']; ?> </div>
@@ -63,5 +66,13 @@ $additional_data['shift_room'] = $shift_meta_shift_room[0];
 	</div>
 	<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="tribe-events-read-more" rel="bookmark"><?php esc_html_e( 'More details', 'the-events-calendar' ) ?> &raquo;</a>
 </div><!-- .tribe-events-list-event-description -->
+<? } else { ?>
+	<div class="tribe-events-list-event-description tribe-events-content description entry-summary">
+	<div class="entry-summary">
+		<div class="tribe-events-open-alert">Open Shift</div>
+	</div>
+	<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="tribe-events-read-more" rel="bookmark"><?php esc_html_e( 'More details', 'the-events-calendar' ) ?> &raquo;</a>
+</div><!-- .tribe-events-list-event-description -->
+<? } ?>
 <?php
 do_action( 'tribe_events_after_the_content' );

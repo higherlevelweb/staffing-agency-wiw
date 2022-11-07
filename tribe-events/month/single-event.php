@@ -38,12 +38,14 @@ $shift_meta_shift_id = get_post_meta( $post->ID, 'Shift ID' );
 $shift_meta_employee_name = get_post_meta( $post->ID, 'Employee Name' );
 $shift_meta_position = get_post_meta( $post->ID, 'Shift Position' );
 $shift_meta_shift_room = get_post_meta( $post->ID, 'Shift Room' );
+$shift_meta_shift_status = get_post_meta( $post->ID, 'Shift Status' );
 
 $additional_data = array();
 $additional_data['shift_id'] = $shift_meta_shift_id[0];
 $additional_data['employee_name'] = $shift_meta_employee_name[0];
 $additional_data['shift_position'] = $shift_meta_position[0];
 $additional_data['shift_room'] = $shift_meta_shift_room[0];
+$additional_data['shift_status'] = $shift_meta_shift_status[0];
 
 
 /**
@@ -211,7 +213,7 @@ $additional_data['shift_room'] = $shift_meta_shift_room[0];
  */
 ?>
 
-<div id="tribe-events-event-<?php echo esc_attr( $event_id ); ?>" class="<?php tribe_events_event_classes() ?>" data-tribejson='<?php echo esc_attr( tribe_events_template_data( $post, $additional_data ) ); ?>'>
+<div id="tribe-events-event-<?php echo esc_attr( $event_id ); ?>" class="<?php tribe_events_event_classes(); if ($additional_data['shift_status']=="open") { echo " tribe-events-open-alert"; } ?>" data-tribejson='<?php echo esc_attr( tribe_events_template_data( $post, $additional_data ) ); ?>'>
 	<h3 class="tribe-events-month-event-title"><a href="<?php echo esc_url( $link ) ?>" class="url"><?php echo $title ?></a></h3>
 </div><!-- #tribe-events-event-# -->
 

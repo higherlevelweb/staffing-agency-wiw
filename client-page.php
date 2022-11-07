@@ -19,7 +19,7 @@ $user = wp_get_current_user();
                 <? wp_title('') ?>
             </h2>
         </div>
-		<div class="meta-page-right"><?php echo $user->display_name ?></div>
+		<div class="meta-page-right"><strong><?php echo $user->display_name ?></strong></div>
     </div>
 </div>
 <main id="primary" class="site-main">
